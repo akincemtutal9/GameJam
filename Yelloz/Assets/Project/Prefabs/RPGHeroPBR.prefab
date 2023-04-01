@@ -1121,6 +1121,7 @@ GameObject:
   - component: {fileID: 4703289898092498}
   - component: {fileID: 6075483138657596625}
   - component: {fileID: 5704166654186801672}
+  - component: {fileID: 8808199197000399112}
   m_Layer: 0
   m_Name: weaponShield_r
   m_TagString: Untagged
@@ -1173,6 +1174,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8808199197000399112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335628712726804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b85e588d5b22d43bdced98d8ae9d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTag: Enemy
 --- !u!1 &1363730751717220
 GameObject:
   m_ObjectHideFlags: 0

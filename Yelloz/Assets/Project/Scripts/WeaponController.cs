@@ -5,10 +5,10 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private float attackRange = 1.5f;
     [SerializeField] private int attackDamage = 10;
     [SerializeField] private float attackRate = 2f;
-    [SerializeField] private Transform attackPoint;   
-    [SerializeField] private LayerMask enemyLayer;
     private Animator animator;
     private float nextAttackTime = 0f;
+
+    public int AttackDamage { get => attackDamage; set => attackDamage = value; }
 
     private void Start()
     {
@@ -33,30 +33,11 @@ public class WeaponController : MonoBehaviour
     private void Attack()
     {
         animator.SetTrigger("Attack1");
-
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
-
-        foreach (Collider enemy in hitEnemies)
-        {
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-        }
     }
     private void SpecialAttack()
     {
         animator.SetTrigger("Attack2");
 
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayer);
-
-        foreach (Collider enemy in hitEnemies)
-        {
-            enemy.GetComponent<Enemy>().TakeSpecialDamage(attackDamage);
-        }
-    }
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
+    }    
 }
+  
