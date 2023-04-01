@@ -11,8 +11,10 @@ public class TopDownMovement : MonoBehaviour
     private CharacterController controller;
     private Animator animator;
     
+    private Camera mainCamera;
     private void Start()
     {
+        mainCamera = Camera.main;
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
@@ -33,7 +35,7 @@ public class TopDownMovement : MonoBehaviour
         moveDirection.Normalize();
        
         controller.Move(moveDirection * (speed * Time.deltaTime));
-        
+        Aim();
         if(moveDirection != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
@@ -54,4 +56,39 @@ public class TopDownMovement : MonoBehaviour
         playerVelocity.y += gravity * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
     }
+
+     private void Aim()
+        {
+            var (success, position) = GetMousePosition();
+            if (success)
+            {
+                // Calculate the direction
+                var direction = position - transform.position;
+
+                // You might want to delete this line.
+                // Ignore the height difference.
+                direction.y = 0;
+
+                // Make the transform look in the direction.
+                transform.forward = direction;
+            }
+        }
+
+        private (bool success, Vector3 position) GetMousePosition()
+        {
+            var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity))
+            {
+                // The Raycast hit something, return with the position.
+                return (success: true, position: hitInfo.point);
+            }
+            else
+            {
+                // The Raycast did not hit anything.
+                return (success: false, position: Vector3.zero);
+            }
+        }
+
+
 }
