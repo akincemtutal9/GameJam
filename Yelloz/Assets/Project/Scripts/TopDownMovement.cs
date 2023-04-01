@@ -38,8 +38,8 @@ public class TopDownMovement : MonoBehaviour
         Aim();
         if(moveDirection != Vector3.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
+            //Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
             
             animator.SetBool("IsRunning", true);
         }
