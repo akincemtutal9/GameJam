@@ -4,17 +4,20 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
-    
+    public static int XP;
+    public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+    public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
+
     private void Start()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
     }
     
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        Debug.Log(currentHealth);
-        if (currentHealth <= 0)
+        CurrentHealth -= damageAmount;
+        Debug.Log(CurrentHealth);
+        if (CurrentHealth <= 0)
         {
             Die();
         }

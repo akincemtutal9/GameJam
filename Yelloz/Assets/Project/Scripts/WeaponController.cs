@@ -3,11 +3,13 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [SerializeField] private int attackDamage = 10;
+    [SerializeField] private float critChance = 0f;
     [SerializeField] private float attackRate = 2f;
     private Animator animator;
     private float nextAttackTime = 0f;
 
     public int AttackDamage { get => attackDamage; set => attackDamage = value; }
+    public float CritChance { get => critChance; set => critChance = value; }
 
     private void Start()
     {

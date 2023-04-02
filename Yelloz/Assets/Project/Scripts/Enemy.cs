@@ -1,17 +1,20 @@
 using UnityEngine;
 public class Enemy : MonoBehaviour
 {
+    private GameObject canvas;
     private int health;
     [SerializeField] private EnemyType enemyType;
     private string enemyName; // Name of the enemy
     private int maxHealth; // Maximum health of the enemy
-
     public static int killCount;
-    
-    private void Start(){        
+
+    private void Start()
+    {
+        canvas = GameObject.FindGameObjectWithTag("UpgradeCanvas");
         enemyName = enemyType.enemyName;
         maxHealth = enemyType.maxHealth;
-        health = maxHealth;        
+        health = maxHealth;
+        Debug.Log(canvas.name);
     }
     public void TakeDamage(int damage)
     {
@@ -33,6 +36,20 @@ public class Enemy : MonoBehaviour
     private void Die()
     {
         killCount++;
+        Player.XP++;
+        Debug.Log(Player.XP);
+
+        if (Player.XP == 20)
+        {
+            ShowUpgradeCanvas();
+            Player.XP = 0;
+        }
         Destroy(gameObject);
-    }   
+    }
+    public void ShowUpgradeCanvas()
+    {
+        Transform panel = canvas.transform.GetChild(0);
+        panel.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+    }
 }

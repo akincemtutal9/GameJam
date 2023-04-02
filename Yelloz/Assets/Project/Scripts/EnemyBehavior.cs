@@ -14,10 +14,12 @@ public class EnemyBehavior : MonoBehaviour
     private enum EnemyState { Run, Attack }
     private EnemyState currentState = EnemyState.Run;
 
+    public int AttackDamage { get => attackDamage; set => attackDamage = value; }
+
     private void Start()
     {
         runSpeed = enemyType.moveSpeed;
-        attackDamage = enemyType.damage;
+        AttackDamage = enemyType.damage;
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
     }

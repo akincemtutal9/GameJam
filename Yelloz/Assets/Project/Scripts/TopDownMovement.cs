@@ -12,6 +12,9 @@ public class TopDownMovement : MonoBehaviour
     private Animator animator;
     
     private Camera mainCamera;
+
+    public float Speed { get => speed; set => speed = value; }
+
     private void Start()
     {
         mainCamera = Camera.main;
@@ -34,7 +37,7 @@ public class TopDownMovement : MonoBehaviour
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
         moveDirection.Normalize();
        
-        controller.Move(moveDirection * (speed * Time.deltaTime));
+        controller.Move(moveDirection * (Speed * Time.deltaTime));
         Aim();
         if(moveDirection != Vector3.zero)
         {
