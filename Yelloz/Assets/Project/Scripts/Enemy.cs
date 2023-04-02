@@ -5,6 +5,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyType enemyType;
     private string enemyName; // Name of the enemy
     private int maxHealth; // Maximum health of the enemy
+
+    public static int killCount;
     
     private void Start(){        
         enemyName = enemyType.enemyName;
@@ -30,6 +32,7 @@ public class Enemy : MonoBehaviour
     }
     private void Die()
     {
+        killCount++;
         Destroy(gameObject);
     }   
 }
