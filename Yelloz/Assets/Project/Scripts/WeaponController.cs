@@ -36,7 +36,6 @@ public class WeaponController : MonoBehaviour
     private void SpecialAttack()
     {
         animator.SetTrigger("Attack2");
-
     }    
 }
   

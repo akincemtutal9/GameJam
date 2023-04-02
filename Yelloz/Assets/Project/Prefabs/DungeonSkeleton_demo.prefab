@@ -1,5 +1,82 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2187182525936778007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790181052807745909}
+  - component: {fileID: 1212101501230080530}
+  - component: {fileID: 1089484236721537298}
+  - component: {fileID: 8273113853728837193}
+  m_Layer: 3
+  m_Name: WeaponHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &790181052807745909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187182525936778007}
+  m_LocalRotation: {x: -0.019705629, y: 0.07189468, z: -0.0005051499, w: 0.9972175}
+  m_LocalPosition: {x: 0.15220073, y: 0.00006267034, z: -0.0058389665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5710097398290456751}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -2.248, y: 8.252, z: -0.22}
+--- !u!136 &1212101501230080530
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187182525936778007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.04181737
+  m_Height: 0.98421466
+  m_Direction: 2
+  m_Center: {x: -0.015263529, y: 0.050748024, z: -0.5701973}
+--- !u!54 &1089484236721537298
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187182525936778007}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &8273113853728837193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2187182525936778007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b85e588d5b22d43bdced98d8ae9d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTag: Player
 --- !u!1 &5710097398290431137
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +840,8 @@ Transform:
   m_LocalPosition: {x: -0.100588724, y: 0.000000048446655, z: 0}
   m_LocalScale: {x: -1, y: -1, z: -1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 790181052807745909}
   m_Father: {fileID: 5710097398290456737}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -905,11 +983,12 @@ GameObject:
   - component: {fileID: 5710097398290456761}
   - component: {fileID: 5710097398280933223}
   - component: {fileID: 5446227668934606320}
-  - component: {fileID: 4598958080524895258}
   - component: {fileID: 866906743221390809}
+  - component: {fileID: 467109899715399067}
+  - component: {fileID: -1539677838477107468}
   m_Layer: 3
   m_Name: DungeonSkeleton_demo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,7 +1020,7 @@ Animator:
   m_GameObject: {fileID: 5710097398290431193}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d1b49018ecc8ac4d917b8d3d82382b4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -963,23 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f2a2cd11d53e543a834a3b914886d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: {fileID: 11400000, guid: aceea0269d843a24e889695aea2b748b, type: 2}
---- !u!54 &4598958080524895258
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5710097398290431193}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  enemyType: {fileID: 11400000, guid: 03bbbc3e9dd802940a940620d8cdac50, type: 2}
 --- !u!136 &866906743221390809
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -994,6 +1057,34 @@ CapsuleCollider:
   m_Height: 2.6634007
   m_Direction: 1
   m_Center: {x: 0, y: 1.2331896, z: 0}
+--- !u!114 &467109899715399067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5710097398290431193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347c586eabf76c1488fc8dddb312411a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: {fileID: 11400000, guid: 03bbbc3e9dd802940a940620d8cdac50, type: 2}
+  attackRange: 2
+  attackRate: 2
+--- !u!114 &-1539677838477107468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5710097398290431193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da52a61649b7a3c4499a5075d55f0ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLogic: {fileID: 2187182525936778007}
 --- !u!1 &5710097398290431195
 GameObject:
   m_ObjectHideFlags: 0

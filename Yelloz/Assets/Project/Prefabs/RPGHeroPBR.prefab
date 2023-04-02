@@ -921,9 +921,10 @@ GameObject:
   - component: {fileID: 7038831643135750480}
   - component: {fileID: 2578932150591884668}
   - component: {fileID: 7628120881780922584}
-  m_Layer: 0
+  - component: {fileID: 4230062652927465707}
+  m_Layer: 6
   m_Name: RPGHeroPBR
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1028,13 +1029,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830aa038cdafafe4eafa180612523ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1
   attackDamage: 10
   attackRate: 2
-  attackPoint: {fileID: 4703289898092498}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!114 &7628120881780922584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1044,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLogic: {fileID: 1335628712726804}
+--- !u!114 &4230062652927465707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319517528997712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bde6b3ed1ab584d8bdb30377c841b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1323932758960028
 GameObject:
   m_ObjectHideFlags: 0

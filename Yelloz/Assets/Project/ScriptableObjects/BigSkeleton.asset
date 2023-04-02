@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e991137c5e1ba3e40a8a19a33805b37b, type: 3}
-  m_Name: Skeleton
+  m_Name: BigSkeleton
   m_EditorClassIdentifier: 
-  enemyName: Skeleton
-  maxHealth: 10
-  damage: 2
-  moveSpeed: 2
+  enemyName: BigSkeleton
+  maxHealth: 40
+  damage: 8
+  moveSpeed: 1
