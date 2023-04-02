@@ -1030,7 +1030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 10
+  critChance: 0
   attackRate: 2
+  audioObj: {fileID: 0}
 --- !u!114 &7628120881780922584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1056,7 +1058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bde6b3ed1ab584d8bdb30377c841b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 80
+  loseUI: {fileID: 0}
+  audioObj: {fileID: 0}
 --- !u!1 &1323932758960028
 GameObject:
   m_ObjectHideFlags: 0

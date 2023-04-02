@@ -40,7 +40,7 @@ public class UpgradeCanvas : MonoBehaviour
     }
 
     public void AttackDamage(){
-        weaponController.AttackDamage += 1;
+        weaponController.AttackDamage += 5;
         HideUpgradeCanvas();
     }
 

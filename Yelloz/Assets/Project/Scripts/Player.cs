@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,6 +8,8 @@ public class Player : MonoBehaviour
     public static int XP;
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
+
+    public GameObject loseUI;
 
     public GameObject audioObj;
 
@@ -29,6 +32,7 @@ public class Player : MonoBehaviour
     {
         audioObj.GetComponent<AudioPlayer>().PlayCharacterDie();
         Destroy(gameObject);
+        loseUI.SetActive(true);
         Debug.Log("Player died!");
     }
 }

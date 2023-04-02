@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
         enemyName = enemyType.enemyName;
         maxHealth = enemyType.maxHealth;
         health = maxHealth;
-        Debug.Log(canvas.name);
     }
     public void TakeDamage(int damage)
     {
