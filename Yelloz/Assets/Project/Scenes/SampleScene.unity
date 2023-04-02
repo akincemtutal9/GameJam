@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dca6f46ab535a794e8caa8aa81ce9eac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2825,6 +2825,10 @@ PrefabInstance:
       propertyPath: audioPlayer
       value: 
       objectReference: {fileID: 2083722546}
+    - target: {fileID: 4230062652927465707, guid: 1543549dcdf638d488bd40cb68dd9b8e, type: 3}
+      propertyPath: audioObj
+      value: 
+      objectReference: {fileID: 2083722545}
     - target: {fileID: 6210622304011438532, guid: 1543549dcdf638d488bd40cb68dd9b8e, type: 3}
       propertyPath: m_UseGravity
       value: 0
@@ -3916,7 +3920,7 @@ GameObject:
   - component: {fileID: 2083722548}
   m_Layer: 0
   m_Name: AudioPlayer
-  m_TagString: Untagged
+  m_TagString: AudioPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
