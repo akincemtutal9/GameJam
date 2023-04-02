@@ -3,7 +3,7 @@ using UnityEngine;
 public class TopDownCamera : MonoBehaviour 
 {
     public Transform target; // The target object to follow
-    public float distance = 10.0f; // The distance from the target object
+    public float distance = 5.0f; // The distance from the target object
     public float height = 10.0f; // The height from the target object
     public float smoothSpeed = 0.5f; // The speed at which the camera moves
 
