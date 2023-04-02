@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,9 +14,16 @@ public class Player : MonoBehaviour
 
     public GameObject audioObj;
 
+    public Slider slider;
+
     private void Start()
     {
         CurrentHealth = MaxHealth;
+        slider.value = 1;
+    }
+
+    private void Update(){
+        slider.value = (float) currentHealth/maxHealth;
     }
     
     public void TakeDamage(int damageAmount)
