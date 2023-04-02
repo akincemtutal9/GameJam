@@ -8,12 +8,14 @@ public class WeaponController : MonoBehaviour
     private Animator animator;
     private float nextAttackTime = 0f;
 
+    public GameObject audioObj;
+    
     public int AttackDamage { get => attackDamage; set => attackDamage = value; }
     public float CritChance { get => critChance; set => critChance = value; }
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>(); 
     }
     private void Update()
     {
@@ -22,11 +24,13 @@ public class WeaponController : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 Attack();
+                audioObj.GetComponent<AudioPlayer>().PlayAttack1();     
                 nextAttackTime = Time.time + 1f / attackRate;
             }
             else if (Input.GetButtonDown("Fire2"))
             {
                 SpecialAttack();
+                audioObj.GetComponent<AudioPlayer>().PlayAttack2();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
@@ -34,6 +38,7 @@ public class WeaponController : MonoBehaviour
     private void Attack()
     {
         animator.SetTrigger("Attack1");
+         
     }
     private void SpecialAttack()
     {

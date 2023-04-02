@@ -7,9 +7,10 @@ public class Enemy : MonoBehaviour
     private string enemyName; // Name of the enemy
     private int maxHealth; // Maximum health of the enemy
     public static int killCount;
-
+    public GameObject audioObj;
     private void Start()
     {
+        audioObj = GameObject.FindGameObjectWithTag("AudioPlayer");
         canvas = GameObject.FindGameObjectWithTag("UpgradeCanvas");
         enemyName = enemyType.enemyName;
         maxHealth = enemyType.maxHealth;
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
             ShowUpgradeCanvas();
             Player.XP = 0;
         }
+        audioObj.GetComponent<AudioPlayer>().PlayEnemyDie();
         Destroy(gameObject);
     }
     public void ShowUpgradeCanvas()

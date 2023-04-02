@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
+    public GameObject audioObj;
+
     private void Start()
     {
         CurrentHealth = MaxHealth;
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour
     
     private void Die()
     {
+        audioObj.GetComponent<AudioPlayer>().PlayCharacterDie();
         Destroy(gameObject);
         Debug.Log("Player died!");
     }
