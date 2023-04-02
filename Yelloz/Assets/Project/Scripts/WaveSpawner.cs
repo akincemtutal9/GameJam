@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class WaveSpawner : MonoBehaviour
     float SpawnRange = 10;
     public int enemiesKilled;
 
+    public GameObject WinCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class WaveSpawner : MonoBehaviour
             currentWave++;
             if (currentWave >= waves.Length) {
                 Debug.Log("You won");
+                StartCoroutine(winCanvas());
             } else {
                 SpawnWave();
             }
@@ -56,4 +60,10 @@ public class WaveSpawner : MonoBehaviour
           return FindSpawnLocation();
         }
     }
+
+    private IEnumerator winCanvas(){
+        yield return new WaitForSeconds(2f);
+        WinCanvas.gameObject.SetActive(true);
+    }
+
 }

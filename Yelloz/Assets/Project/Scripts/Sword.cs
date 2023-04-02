@@ -22,10 +22,12 @@ public class Sword : MonoBehaviour
                 weaponController.AttackDamage *= 2;
             // Deal damage to the enemy
             other.GetComponent<Enemy>().TakeDamage(weaponController.AttackDamage);
+
             }
 
             if(enemyTag == "Player"){
                 other.GetComponent<Player>().TakeDamage(enemyBehavior.AttackDamage);
+            
             }
 
         
